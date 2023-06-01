@@ -1,13 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-
 body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #023047;
+}
+.row {
+    margin: 0 - 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #023047;
-}
+  }
+    
+  .column {
+    width: 50%;
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+    
+    /* Remove extra left and right margins, due to padding */
+  .row {margin: 0 -5px;}
+    
+    /* Clear floats after the columns */
+  .row:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
 
 .page {
     display: flex;
@@ -15,8 +35,8 @@ body {
     align-items: center;
     align-content: center;
     justify-content: center;
-    width: 70vh;
-    height: 70%;
+    width: 100%;
+    height: 100vh;
     background-color: #023047;
 }
 
@@ -29,7 +49,7 @@ body {
     margin-bottom: 10px;
     margin-top: 40px;
     box-shadow: #a70a0a;
-    border:#a70a0a solid;
+ 
     gap: 2px
 }
 
@@ -50,7 +70,7 @@ body {
     margin-bottom: 10px;
 }
 
-.formCad input {
+.formCad select input {
     padding: 15px;
     font-size: 14px;
     border: 1px solid #ccc;
@@ -113,3 +133,8 @@ body {
     top: 0px;
     left: 30px;
   }
+
+  .logo:hover {
+    transform: translateY(-5px);
+  }
+ 

@@ -20,6 +20,9 @@
     top: 0px;
     left: 30px;
   }
+  .logo:hover {
+    transform: translateY(-5px);
+  }
   
   /* Float four columns side by side */
 .row {

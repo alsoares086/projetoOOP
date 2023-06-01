@@ -46,10 +46,9 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    border-radius: 7px;
+    border-radius: 10px;
     padding: 40px;
     box-shadow: #a70a0a;
-    border:#a70a0a solid;
     gap: 5px
 }
 
@@ -130,4 +129,7 @@ body {
     position: absolute;
     top: 0px;
     left: 30px;
+  }
+  .logo:hover {
+    transform: translateY(-5px);
   }

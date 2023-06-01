@@ -9,35 +9,47 @@
     <link rel="stylesheet" href="CSS/cad.css">
     <link rel="icon" type="image/png" href="./IMAGENS/apple-icon.png"/> 
     <title>Cadastro de Aluno</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
 </head>
 <body>
     
     <div class="page">
 
         <a href="index.html"><div class="logo"></div></a>
-        <br><br><br><br>
+
         <form class="formCad" method="post" action="php/cadastrarAluno.php"> <!-- CONECTAR COM O ARQUIVO PHP -->
 
             <h1>Cadastro de Aluno</h1>
+            <p>Informe os seus dados campo abaixo:</p>
             
             <label for="aluno" class="m-3" >Nome do estudante: </label>
             <input type="text" id="nome" name="nome" placeholder="Digite o nome" required><br>
 
-            <label for="aluno" class="m-3" >Turno do curso: </label>
-            <input type="text" id="turno" name="turno" placeholder="Ex. Vespertino" required><br>
+            <label for="turno" class="m-3" >Turno do curso: </label>
+            <select id="turno" name="turno" required>
+                <option value="">Escolha o turno</option>
+                <option value="matutino">Matutino</option>
+                <option value="vespertino">Vespertino</option>
+                <option value="noturno">Noturno</option>
+            </select><br>
 
-            <label for="aluno" class="m-3" >Curso do estudante: </label>
-            <input type="text" id="curso" name="curso" placeholder="Ex. Administração" required><br>
+            <label for="tipo" class="m-3" >Tipo de curso: </label>
+            <select id="tipo" name="tipo" required>
+                <option value="">Escolha o tipo de curso</option>
+                <option value="Médio Integrado">Médio Integrado</option>
+                <option value="Técnico Subsequente">Técnico Subsequente</option>
+                <option value="Superior de Tecnologia">Superior de Tecnologia</option>
+                <option value="Bacharelado">Bacharelado</option>
+                <option value="Licenciatura">Licenciatura</option>
+                <option value="Especialização">Especialização</option>
+                <option value="Mestrado">Mestrado</option>
+            </select><br>
 
-            <label for="aluno" class="m-3" >Tipo de curso ( médio, superior ou pós-graduação): </label>
-            <input type="text" id="tipo" name="tipo" placeholder="Ex. Graduação" required><br>
-
-            <label for="usuario" class="m-3 ">Usuário: </label>
-            <input type="text" id="usuario" name="usuario" placeholder="usuario" required> <br>
-    
-            <label for="senha" class="m-3 ">Senha: </label>
-            <input type="password" id="senha" name="senha" placeholder="senha" required> <br>
-            
+            <label for="curso" class="m-3" >Curso do estudante: </label>
+            <select id="curso" name="curso" required>
+                <option value="">Escolha o curso</option>
+            </select><br>
 
             <button class="btn m-3">Cadastrar</button>
             <a href="loginAluno.html">Já possui cadastro?</a>
@@ -45,5 +57,6 @@
         
     </div>
 
+    <script src="./JS/script.js "></script>
 </body>
 </html>
