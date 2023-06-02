@@ -2,9 +2,8 @@
 
 require_once "Classes\Gateway\AlunoGateway.php";
 require_once "Classes\Aluno.php";
+require_once "Classes\Conexao.php";
 
-$username = "root";
-$password = "";
 
     $nomeAluno = $_POST['nome'];
     $turno = $_POST['turno'];
@@ -14,7 +13,8 @@ $password = "";
     $senhaAluno = $_POST['senha'];
 
     try {
-        $conn = new PDO ('mysql:host=localhost; dbname=dbacademico', $username, $password);
+        $conn = new Conexao();
+        $conn->setConnection();
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         Aluno::setConnection($conn);    
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
