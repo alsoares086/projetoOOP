@@ -46,6 +46,11 @@ class Professor{
     return $pdg->save((object)$this->data);
   }//fim do metodo save()
 
+  public function autenticacao($user, $password){
+  $pdg = new ProfessorGateway;
+  return $pdg->autenticacao($this->idProfessor, $this->senhaProfessor);
+  }
+
 
 }//fim da classe Produto 
 
