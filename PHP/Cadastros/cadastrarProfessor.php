@@ -1,7 +1,7 @@
 <?php
 
-require_once "Classes\Gateway\ProfessorGateway.php";
-require_once "Classes\Professor.php";
+require_once "..\Classes\Gateway\ProfessorGateway.php";
+require_once "..\Classes\Professor.php";
 
 $username = "root";
 $password = "";
@@ -18,12 +18,6 @@ $password = "";
         Professor::setConnection($conn);    
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         ProfessorGateway::setConnection($conn);
-
-        $corpoDocente = Professor::all(); //retorna todos os objetos da tabela;
-        
-        foreach($corpoDocente as $corpoDocente) { //foeach para excluir tudo do banco 
-            $corpoDocente->delete(); //pegando cada dado da tabela e excluindo 
-        }
 
         $professor1 = new Professor();
         $professor1 -> nomeProfessor = $nomeProfessor;

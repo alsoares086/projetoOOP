@@ -1,5 +1,6 @@
 <?php
-class Database {
+
+class Conexao{
     private $host = 'localhost';
     private $db_name = 'dbacademico';
     private $username = 'root';

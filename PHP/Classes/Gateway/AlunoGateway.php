@@ -87,16 +87,17 @@
         //Método autenticacao()
         public function autenticacao ($user, $password){
             try {
-                $sql = "SELECT * FROM aluno WHERE usuarioAluno = ':usuario' and senhaAluno = ':senha'";
-                $stmt = $conexao->prepare($sql);
-                $stmt->bindValue(':usuario',$user);
+                $sql = "SELECT * FROM aluno WHERE idAluno= ':id' and senhaAluno = ':senha'";
+                $stmt = $sql->prepare($sql);
+                $stmt->bindValue(':id',$user);
                 $stmt->bindValue(':senha', $password);
                 $stmt->execute();
                 $userDB = $stmt->fetch(PDO::FETCH_OBJ);
 
                 if (password_verify($user->$password, $userDB->senha)) {
                     
-                    return $usuarioDoBanco;                    
+                    return $usuarioDoBanco;
+                    
                 }else{
                     return false;
                 }                
