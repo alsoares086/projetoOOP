@@ -21,7 +21,7 @@
     left: 30px;
   }
   .logo:hover {
-    transform: translateY(-5px);
+    background-image: url('../IMAGENS/logoEduHover.png');
   }
   
   /* Float four columns side by side */
