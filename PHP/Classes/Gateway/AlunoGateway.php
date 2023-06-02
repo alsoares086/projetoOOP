@@ -71,7 +71,7 @@
                 senhaAluno = '{$data->senhaAluno}', 
                 usuarioAluno = '{$data->usuarioAluno}' 
                 WHERE idAluno = '{$data->id}'";
-            }
+        }
            //print "$sql <br>\n";
             return self::$conn->exec($sql); //executa a instrução SQL
         }//Fim do método save()
