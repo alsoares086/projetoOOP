@@ -22,7 +22,7 @@ body {
     /* Remove extra left and right margins, due to padding */
   .row {margin: 0 -5px;}
     
-    /* Clear floats after the columns */
+
   .row:after {
       content: "";
       display: table;
@@ -111,6 +111,7 @@ body {
 
 .checkmark {
     display: none;
+    color: red;
     color: green;
     font-size: 20px;
 }
@@ -122,8 +123,16 @@ body {
 
 .requisito {
     color: red;
+}
+
+.red {
+    color: red;
+}
+
+.green {
     color: green;
 }
+
 
 
 .btn {
