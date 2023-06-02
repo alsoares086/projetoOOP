@@ -9,8 +9,8 @@ $password = "";
     $nomeProfessor = $_POST['nome'];
     $escolaridade = $_POST['escolaridade'];
     $especializacao = $_POST['especializacao'];
-    $senhaProfessor = $_POST['usuario'];
-    $usuarioProfessor = $_POST['senha'];
+    $senhaProfessor = $_POST['senha'];
+    $usuarioProfessor = $_POST['usuario'];
 
     try {
         $conn = new PDO ('mysql:host=localhost; dbname=dbacademico', $username, $password);

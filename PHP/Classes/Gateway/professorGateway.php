@@ -82,6 +82,27 @@
             $data = $result->fetch(PDO::FETCH_OBJ);
             return $data->max;
         }//Fim do método getLastId()
+
+        //Método autenticacao()
+        public function autenticacao($id, $password) {
+            try {
+                $sql = "SELECT * FROM professor WHERE idProfessor = :id and senhaProfessor = :senha";
+                $stmt = self::$conn->prepare($sql);
+                $stmt->bindValue(':id', $id);
+                $stmt->bindValue(':senha', $password);
+                $stmt->execute();
+                $userDB = $stmt->fetch(PDO::FETCH_OBJ);
+        
+                if ($userDB == null ) {
+                    return false;
+
+                } else {
+                    return true;
+                }
+            } catch (PDOException $erro) {
+                throw $erro;
+            }
+        }//Fim do método autenticacao
         
     }//Fim da clase ProdutoGateway
 ?>

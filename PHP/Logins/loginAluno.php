@@ -23,19 +23,21 @@ try {
     $aluno->idAluno = $usuario;
     $aluno->senhaAluno = $senha;
 
-    $authenticatedAluno = $aluno->autenticar();
+    $authenticatedAluno = $aluno->autenticacao($usuario, $senha);
 
     if ($authenticatedAluno) {
         // O aluno foi autenticado com sucesso
         echo "Login bem-sucedido!";
         // Realize as ações desejadas após o login
+    } 
 
-    } else {
+    else {
         // Credenciais inválidas
-        echo "Usuário ou senha incorretos!";
-        // Redirecione ou exiba uma mensagem de erro
-
+        // Redireciona para a página de login se a senha ou o usuário não der certo
+        header('Location: ../../loginAluno.html');
     }
+
+
 
 } catch (PDOException $e) {
     echo "Erro na conexão com o banco de dados: " . $e->getMessage();
