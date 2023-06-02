@@ -135,6 +135,6 @@ body {
   }
 
   .logo:hover {
-    transform: translateY(-5px);
+    background-image: url('../IMAGENS/logoEduHover.png');
   }
  
