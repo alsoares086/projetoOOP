@@ -29,16 +29,17 @@ body {
       clear: both;
   }
 
-.page {
+  .page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #023047;
 }
+
+
 
 .formCad {
     display: flex;
@@ -102,6 +103,28 @@ body {
 .formCad a:hover {
     color: #a70a0a;
 }
+
+.error_message {
+    color: red;
+    font-size: 12px;
+}
+
+.checkmark {
+    display: none;
+    color: green;
+    font-size: 20px;
+}
+
+#senha_requisitos, #confirm_status {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.requisito {
+    color: red;
+    color: green;
+}
+
 
 .btn {
     background-color: #a70a0a;

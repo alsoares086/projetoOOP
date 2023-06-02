@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="CSS/cad.css">
     <link rel="icon" type="image/png" href="./IMAGENS/apple-icon.png"/>
     
@@ -14,9 +15,10 @@
 <body>
 
     <div class="page">
+
     <a href="index.html"><div class="logo"></div></a>
    
-    <form class="formCad" method="post" action="php/Cadastrosd/cadastrarProfessor.php"> <!-- CONECTAR COM O ARQUIVO PHP -->
+    <form class="formCad" method="post" action="php/Cadastros/cadastrarProfessor.php"> <!-- CONECTAR COM O ARQUIVO PHP -->
 
 		<h1>Cadastro de Professor</h1>
         <p>Informe os seus dados campo abaixo:</p>
@@ -35,11 +37,34 @@
 
         <label for="especialidade" class="m-3 ">Especialização do professor: </label>
 		<input type="text" id="especializacao" name="especializacao" placeholder="Ex. Estatística" required> <br>
+
+
+        <label for="usuario" class="m-3" >Nome de usuário: </label>
+        <input type="text" id="usuario" name="usuario" placeholder="Digite o nome de usuário" required>
+        <div id="usuario_error" class="error"></div>
+        <div id="usuario_check" class="checkmark">&#10004;</div>
+
+        <label for="senha" class="m-3" >Senha: </label>
+        <input type="password" id="senha" name="senha" placeholder="Digite a senha" required>
+        <ul id="senha_requisitos">
+            <li id="letras_minusculas">Letras minúsculas <span class="requisito">&#10060;</span></li>
+            <li id="letras_maiusculas">Letras maiúsculas <span class="requisito">&#10060;</span></li>
+            <li id="numeros">Números <span class="requisito">&#10060;</span></li>
+            <li id="caracteres_especiais">Caracteres especiais <span class="requisito">&#10060;</span></li>
+            <li id="min_caracteres">Mínimo de 6 caracteres <span class="requisito">&#10060;</span></li>
+        </ul>
+        
+        <label for="confirm_senha" class="m-3" >Confirmação da senha: </label>
+        <input type="password" id="confirm_senha" name="confirm_senha" placeholder="Confirme a senha" required>
+        <div id="confirm_status"><span class="requisito">&#10060;</span> As senhas não coincidem</div>
+        <br><br>
         
         <button class="btn m-3">Cadastrar</button>
         <a href="loginProfessor.html">Já possui cadastro?</a>
     </form>
 </div>
 
+
+    <script src="./JS/script.js"></script>
 </body>
 </html>

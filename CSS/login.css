@@ -31,16 +31,16 @@ body {
       clear: both;
   }
 
-.page {
+  .page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #023047;
 }
+
 
 .formLogin {
     display: flex;
