@@ -38,7 +38,11 @@ body {
     justify-content: center;
     width: 100%;
     min-height: 100vh;
-    background-color: #023047;
+    background: url(../IMAGENS/fundo.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 
@@ -126,7 +130,7 @@ body {
     background-position: center;
     width: 200px;
     height: 100px;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 30px;
   }

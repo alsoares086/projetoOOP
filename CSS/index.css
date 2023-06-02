@@ -1,14 +1,19 @@
 * {
     box-sizing: border-box;
   }
+
   
   body {
+    background: url(../IMAGENS/fundo.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #023047;
-  }
+   }
   .logo {
     background-image: url('../IMAGENS/logoEdu.png');
     background-size: contain;
@@ -16,13 +21,33 @@
     background-position: center;
     width: 200px;
     height: 100px;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 30px;
   }
   .logo:hover {
     background-image: url('../IMAGENS/logoEduHover.png');
   }
+  .admin-link {
+    position: absolute;
+    right: 30px;
+    top: 20px;  /* Ajuste conforme necessário */
+    color: #fff; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bolder;
+    
+  }
+  .admin-link:hover{
+    text-decoration: none; /* Remove o sublinhado */
+    color: rgb(177, 165, 165);
+  }
+  
+  .admin-link img {
+    width: 30px; /* Largura do ícone */
+    height: 30px; /* Altura do ícone */
+    margin-right: 5px; /* Espaço entre o ícone e o texto */
+  }
+  
   
   /* Float four columns side by side */
 .row {
@@ -57,7 +82,6 @@
     max-width: 600px; /* Defina o valor máximo de largura desejado para o card */
     margin: 0 auto; /* Centraliza horizontalmente o card dentro do contêiner pai */ 
     border: 0 solid;  
-    border:#a70a0a solid;
     transition: all 0.3s ease;
 
 }
