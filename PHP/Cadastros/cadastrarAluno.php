@@ -1,9 +1,10 @@
 ﻿<?php
 
-require_once "Classes\Gateway\AlunoGateway.php";
-require_once "Classes\Aluno.php";
-require_once "Classes\Conexao.php";
+require_once "..\Classes\Gateway\AlunoGateway.php";
+require_once "..\Classes\Aluno.php";
 
+$username = "root";
+$password = "";
 
     $nomeAluno = $_POST['nome'];
     $turno = $_POST['turno'];
@@ -13,18 +14,11 @@ require_once "Classes\Conexao.php";
     $senhaAluno = $_POST['senha'];
 
     try {
-        $conn = new Conexao();
-        $conn->setConnection();
+        $conn = new PDO ('mysql:host=localhost; dbname=dbacademico', $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         Aluno::setConnection($conn);    
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         AlunoGateway::setConnection($conn);
-
-        $turma = Aluno::all();
-
-        foreach($turma as $turma) { //foeach para excluir tudo do banco 
-            $turma->delete(); //pegando cada dado da tabela e excluindo 
-        }
 
         $aluno1 = new Aluno();
         $aluno1 -> nomeAluno = $nomeAluno;

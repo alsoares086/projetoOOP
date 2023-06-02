@@ -36,7 +36,7 @@ class Aluno{
 
   //metodo delete()
   public function delete(){
-      $pdg = new AlunoGateway;
+     $pdg = new AlunoGateway;
       return $pdg->delete($this->idAluno);
   }//fim do metodo delete()
 
@@ -45,6 +45,11 @@ class Aluno{
     $pdg = new AlunoGateway;
     return $pdg->save((object)$this->data);
   }//fim do metodo save()
+
+  public function autenticar(){
+   $pdg = new AlunoGateway;
+   return $pdg->autenticar($user, $password);
+  }
 
 
 }//fim da classe Produto 
