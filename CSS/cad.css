@@ -36,25 +36,35 @@ body {
     justify-content: center;
     width: 100%;
     min-height: 100vh;
-    background-color: #023047;
+    background: url(../IMAGENS/fundo.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.formCad .row {
+    margin-bottom: 15px;
 }
 
+.formCad .row .col-md-6 {
+    padding: 0 15px;
+}
 
 
 .formCad {
     display: flex;
     flex-direction: column;
+    align-items: center;  /* Centraliza os elementos verticalmente */
+    justify-content: center;  /* Centraliza os elementos horizontalmente */
     background-color: #fff;
     border-radius: 7px;
-    padding: 10px 40px;
+    padding: 20px 40px; /* Aumento do padding */
     margin-bottom: 10px;
     margin-top: 40px;
-    box-shadow: #a70a0a;
- 
-    gap: 2px
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra suave */
+    width: 60%; /* Aumento da largura */
+    gap: 10px /* Aumento do gap */
 }
-
-
 
 .formCad h1 {
     margin-top: 0;
@@ -161,7 +171,7 @@ body {
     background-position: center;
     width: 200px;
     height: 100px;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 30px;
   }
@@ -169,4 +179,26 @@ body {
   .logo:hover {
     background-image: url('../IMAGENS/logoEduHover.png');
   }
+
+  .form-element {
+    width: 60%;
+    display: block;
+}
+
+.form-element1 {
+    width: 20%;
+    display: block;
+}
+.form-element2 {
+    width: 30%;
+    display: block;
+}
+
+
+@media (max-width: 600px) {
+    .form-element {
+        width: 70%;
+    }
+}
+
  
