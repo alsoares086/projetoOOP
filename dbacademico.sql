@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Jun-2023 às 00:34
+-- Tempo de geração: 03-Jun-2023 às 18:43
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `dbacademico`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `administrador`
+--
+
+CREATE TABLE `administrador` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(60) NOT NULL,
+  `matricula` varchar(10) NOT NULL,
+  `senha` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `administrador`
+--
+
+INSERT INTO `administrador` (`id`, `nome`, `matricula`, `senha`) VALUES
+(1, 'Beatriz', '2024009', 'Jorge@love'),
+(2, 'Alice', '2023008', 'Teste@123');
 
 -- --------------------------------------------------------
 
@@ -95,6 +116,12 @@ INSERT INTO `professor` (`idProfessor`, `nomeProfessor`, `escolaridade`, `especi
 --
 
 --
+-- Índices para tabela `administrador`
+--
+ALTER TABLE `administrador`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `aluno`
 --
 ALTER TABLE `aluno`
@@ -121,6 +148,12 @@ ALTER TABLE `professor`
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `administrador`
+--
+ALTER TABLE `administrador`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `aluno`
