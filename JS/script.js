@@ -174,3 +174,4 @@ document.querySelector('#toggleConfirmPassword').addEventListener('click', funct
 
 
 
+
