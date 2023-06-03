@@ -99,6 +99,76 @@ $("#senha").on("input", function() {
 });
 //fim da verificação do confirmar senha
 
+$(document).ready(function(){
+    var $etapas = $(".etapa");
+    var $progresso = $(".etapa-progresso li");
+
+    $(".avancar").click(function(){
+        var $etapaAtual = $(this).parent();
+        var indice = $etapas.index($etapaAtual);
+
+        // oculta a etapa atual e mostra a próxima
+        $etapaAtual.hide();
+        $etapas.eq(indice + 1).show();
+
+        // atualiza a linha do tempo
+        $progresso.eq(indice).removeClass("ativo");
+        $progresso.eq(indice + 1).addClass("ativo");
+    });
+
+    $(".voltar").click(function(){
+        var $etapaAtual = $(this).parent();
+        var indice = $etapas.index($etapaAtual);
+
+        // oculta a etapa atual e mostra a anterior
+        $etapaAtual.hide();
+        $etapas.eq(indice - 1).show();
+
+        // atualiza a linha do tempo
+        $progresso.eq(indice).removeClass("ativo");
+        $progresso.eq(indice - 1).addClass("ativo");
+    });
+});
+
+
+$(function(){
+    for (i = 1; i <= 31; i++) {
+        $('#day').append($('<option />').val(i).html(i));
+    }
+    for (i = 1; i <= 12; i++) {
+        $('#month').append($('<option />').val(i).html(i));
+    }
+    for (i = 1900; i <= 2023; i++) {
+        $('#year').append($('<option />').val(i).html(i));
+    }
+});
+
+$('.custom-checkbox-input').on('change', function() {
+    $('.custom-checkbox-input').not(this).prop('checked', false);  
+});
+
+var togglePassword = document.querySelector('#togglePassword');
+var passwordField = document.querySelector('#senha');
+
+// Para o campo de senha
+document.querySelector('#togglePassword').addEventListener('click', function (e) {
+    const password = document.querySelector('#senha');
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    this.querySelector('i').classList.toggle('fa-eye-slash');
+});
+
+// Para o campo de confirmação de senha
+document.querySelector('#toggleConfirmPassword').addEventListener('click', function (e) {
+    const confirmPassword = document.querySelector('#confirm_senha');
+    const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+    confirmPassword.setAttribute('type', type);
+    this.querySelector('i').classList.toggle('fa-eye-slash');
+});
+
+
+
+
 
 
 
