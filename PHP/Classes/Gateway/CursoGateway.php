@@ -1,7 +1,7 @@
 <?php
     
-    //Classe AlunoGateway
-    class AlunoGateway {
+    //Classe CursoGateway
+    class CursoGateway {
         private static $conn;
 
         //Método setConnection()
@@ -11,7 +11,7 @@
 
         //Método find() - buscar
         public function find ($id, $class = 'stdClass') {
-            $sql = "SELECT * FROM aluno WHERE idAluno = '$id'";
+            $sql = "SELECT * FROM curso WHERE idCurso = '$id'";
             //print "$sql <br>\n";
             $result = self::$conn->query($sql);
             //fetchObject() retornar a próxima linha (registro) como um objeto
@@ -20,7 +20,7 @@
 
         //Método all()
         public function all ($filter, $class = 'stdClass') {
-            $sql = "SELECT * FROM aluno ";
+            $sql = "SELECT * FROM curso ";
             if ($filter) {
                 $sql .= "WHERE $filter";
             }
@@ -31,7 +31,7 @@
 
         //Método delete()
         public function delete ($id) {
-            $sql = "DELETE FROM aluno WHERE idAluno = '$id'";
+            $sql = "DELETE FROM curso WHERE idCurso = '$id'";
             //print "$sql <br>\n";
             return self::$conn->query($sql);
         }//Fim do método delete()
@@ -40,19 +40,16 @@
         public function save ($data) {
             if (empty($data->id)) { //Id não localizado - Insere
                 $id = $this->getLastId() + 1;
-                $sql = "INSERT INTO aluno 
-                (idAluno, nomeAluno, turno, curso, tipoCurso, senhaAluno, usuarioAluno)
-                VALUES ('{$id}', '{$data->nomeAluno}', '{$data->turno}', '{$data->curso}', '{$data->tipoCurso}' , '{$data->senhaAluno}' , '{$data->usuarioAluno}')"; 
+                $sql = "INSERT INTO curso 
+                (idCurso,nomeCurso,cargaHorariaCurso,tipoCurso)
+                VALUES ('{$id}', '{$data->nomeCurso}', '{$data->cargaHorariaCurso}', '{$data->tipoCurso}')"; 
             }
             else { //Id localizado - Atualiza
                 $sql = "UPDATE aluno SET 
-                nomeAluno = '{$data->nomeAluno}',
-                turno = '{$data->turno}',
-                curso = '{$data->curso}',
+                nomeCurso = '{$data->nomeCurso}',
+                cargaHorariaCurso = '{$data->cargaHorariaCurso}',
                 tipoCurso = '{$data->tipoCurso}',
-                senhaAluno = '{$data->senhaAluno}', 
-                usuarioAluno = '{$data->usuarioAluno}' 
-                WHERE idAluno = '{$data->id}'";
+                WHERE idCurso = '{$data->id}'";
         }
            //print "$sql <br>\n";
             return self::$conn->exec($sql); //executa a instrução SQL
@@ -60,32 +57,12 @@
 
         //Método getLastId()
         public function getLastId() {
-            $sql = "SELECT max(idAluno) as max FROM aluno";
+            $sql = "SELECT max(idCurso) as max FROM curso";
             $result = self::$conn->query($sql);
             $data = $result->fetch(PDO::FETCH_OBJ);
             return $data->max;
         }//Fim do método getLastId()
 
-        //Método autenticacao()
-        public function autenticacao($id, $password) {
-            try {
-                $sql = "SELECT * FROM aluno WHERE idAluno = :id and senhaAluno = :senha";
-                $stmt = self::$conn->prepare($sql);
-                $stmt->bindValue(':id', $id);
-                $stmt->bindValue(':senha', $password);
-                $stmt->execute();
-                $userDB = $stmt->fetch(PDO::FETCH_OBJ);
-        
-                if ($userDB == null ) {
-                    return false;
-
-                } else {
-                    return true;
-                }
-            } catch (PDOException $erro) {
-                throw $erro;
-            }
-        }//Fim do método autenticacao
-        
-    }//Fim da clase AlunoGateway
+            
+    }//Fim da clase CursoGateway
 ?>
