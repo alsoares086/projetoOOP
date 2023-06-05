@@ -29,9 +29,12 @@
     background-image: url('../IMAGENS/logoEduHover.png');
   }
   .admin-link {
-    position: absolute;
+    position: fixed;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     right: 30px;
-    top: 20px;  /* Ajuste conforme necessário */
+    top: 10px;  /* Ajuste conforme necessário */
     color: #fff; /* Cor do texto */
     text-decoration: none; /* Remove o sublinhado */
     font-weight: bolder;
@@ -105,37 +108,28 @@
 /* Responsive columns */
 
 @media screen and (max-width: 800px) {
-    .column {
-      width: 90%;
-      display: block;
-      margin-bottom: 20px;
-    }
-
-    .column:first-child .card {
-      margin-top: 60px; /* Defina a margem superior desejada para o primeiro card em 800px */
-    }
-   
-  }
-  
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 90%;
-      display: block;
-      margin-bottom: 20px;
-      }
-
-    .column:first-child .card {
-      margin-top: 30px; /* Defina a margem superior desejada para o primeiro card em 800px */
-    }
-    
-  }
-
-  /*@media screen and (max-width: 800px) {
   .column {
     width: 90%;
     display: block;
     margin-bottom: 20px;
-    margin-top: 30px; /* Aumenta a margem superior entre as colunas em 800px 
+  }
+  .card {
+    max-width: 80%;
+  }
+  .column:first-child .card {
+    margin-top: 120px;
+  }
+  .imagem_aluno, .imagem_professor {
+    width: 40%;
+  }
+  .logo {
+    width: 150px;  /* Reduzir o tamanho da logo */
+    height: 75px;
+  }
+  .admin-link img {
+    width: 20px;  /* Reduzir o tamanho do ícone de administrador */
+    height: 20px;
+    font-size: 80%;
   }
 }
 
@@ -144,8 +138,24 @@
     width: 90%;
     display: block;
     margin-bottom: 20px;
-    margin-top: 20px; /* Aumenta a margem superior entre as colunas em 600px 
   }
-}*/
-  
+  .card {
+    max-width: 90%;
+  }
+  .column:first-child .card {
+    margin-top: 150px;
+  }
+  .imagem_aluno, .imagem_professor {
+    width: 60%;
+  }
+  .logo {
+    width: 100px;  /* Reduzir ainda mais o tamanho da logo */
+    height: 50px;
+  }
+  .admin-link img {
+    width: 15px;  /* Reduzir ainda mais o tamanho do ícone de administrador */
+    height: 15px;
+    font-size: 40%;
+  }
+}
 

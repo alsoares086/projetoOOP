@@ -137,3 +137,61 @@ body {
   .logo:hover {
     background-image: url('../IMAGENS/logoEduHover.png');
   }
+
+
+  @media screen and (max-width: 800px) {
+    .formLogin {
+      padding: 20px;
+    }
+  
+    .formLogin h1 {
+      font-size: 1.8em;
+    }
+  
+    .formLogin input {
+      padding: 10px;
+      font-size: 12px;
+    }
+  
+    .formLogin label {
+      font-size: 12px;
+    }
+  
+    .btn {
+      font-size: 12px;
+    }
+  
+    .logo {
+      width: 150px;
+      height: 75px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .formLogin {
+      padding: 10px;
+    }
+  
+    .formLogin h1 {
+      font-size: 1.5em;
+    }
+  
+    .formLogin input {
+      padding: 8px;
+      font-size: 10px;
+    }
+  
+    .formLogin label {
+      font-size: 10px;
+    }
+  
+    .btn {
+      font-size: 10px;
+    }
+  
+    .logo {
+      width: 100px;
+      height: 50px;
+    }
+  }
+  

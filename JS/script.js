@@ -143,9 +143,12 @@ $(function(){
     }
 });
 
-$('.custom-checkbox-input').on('change', function() {
-    $('.custom-checkbox-input').not(this).prop('checked', false);  
-});
+$(document).ready(function(){
+    $('.custom-checkbox-input').on('change', function() {
+        $('.custom-checkbox-input').not(this).prop('checked', false);  
+    });
+  });
+  
 
 var togglePassword = document.querySelector('#togglePassword');
 var passwordField = document.querySelector('#senha');
@@ -165,6 +168,8 @@ document.querySelector('#toggleConfirmPassword').addEventListener('click', funct
     confirmPassword.setAttribute('type', type);
     this.querySelector('i').classList.toggle('fa-eye-slash');
 });
+
+
 
 
 
