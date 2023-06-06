@@ -1,0 +1,70 @@
+body {
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+}
+
+.admin-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+
+.admin-profile {
+    width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.admin-profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.logout-btn {
+    display: block;
+    width: 100%;
+    background: #dc3545;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.admin-options {
+    margin-left: 240px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.admin-options a {
+    display: block;
+    background: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.admin-options a:hover {
+    background: #0056b3;
+}
+.welcome-message {
+    margin-left: 240px;
+    padding: 20px;
+}
