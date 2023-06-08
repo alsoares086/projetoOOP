@@ -1,58 +1,40 @@
 <?php
-//objeto de dominio -> simular uma aplicação
-//classe Aluno 
-class Aluno{
-     private static $conn;
-     private $data;
-    
-  public static function setConnection (PDO $conn){
-    self::$conn = $conn;
-    AlunoGateway::setConnection($conn);
-  }
-    //metodo_set()
-   //metodo magico
-   public function __set($prop,$value){
-      $this->data[$prop]=$value;
-   }//fim do metodo magico
+    class Aluno{
+        private $idAluno;
+        private $nomeAluno;
+        private $matriculaAluno;
+        private $senhaAluno;
 
+        public function getIdAluno() {
+            return $this->idAluno;
+        }
 
-  //metodo__get()
-  public function __get($prop){
-     return $this->data[$prop];
-  }//fim do metodo
+        public function setIdAluno($id) {
+            $this->idAluno = $id;
+        }
 
-  
-  //metodo find()
-  public static function find($id){
-     $pdg = new AlunoGateway;
-     return $pdg->find($id,'aluno');
-  }//fim do metodo find() 
+        public function getNomeAluno() {
+            return $this->nomeAluno;
+        }
 
-  //metodo all()
-  public static function all($filter = ''){
-     $pdg = new AlunoGateway;
-     return $pdg->all($filter, 'aluno');
-  }//fim do metodo all
+        public function setNomeAluno($nome) {
+            $this->nomeAluno = $nome;
+        }
 
-  //metodo delete()
-  public function delete(){
-     $pdg = new AlunoGateway;
-      return $pdg->delete($this->idAluno);
-  }//fim do metodo delete()
+        public function getMatriculaAluno() {
+            return $this->matriculaAluno;
+        }
 
-  //metodo save()
-  public function save(){
-    $pdg = new AlunoGateway;
-    return $pdg->save((object)$this->data);
-  }//fim do metodo save()
+        public function setMatriculaAluno($matricula) {
+            $this->matriculaAluno = $matricula;
+        }
 
-  public function autenticacao($user, $password){
-    $pdg = new AlunoGateway;
-   return $pdg->autenticacao($this->idAluno, $this->senhaAluno);
+        public function getSenhaAluno() {
+            return $this->senhaAluno;
+        }
 
-  }
-
-
-}//fim da classe Produto 
-
+        public function setSenhaAluno($senha) {
+            $this->senhaAluno = $senha;
+        }
+    }
 ?>

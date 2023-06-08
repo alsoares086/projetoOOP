@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/cad.css">
+    <link rel="icon" type="image/png" href="./IMAGENS/apple-icon.png" />
+    <title>Inserir Turma</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<form method="POST" action="PHP/inserirTurma.php">
+    <label for="aluno">Alunos:</label>
+    <select name="aluno" id="aluno" required>
+        <option value="">Selecione um curso</option>
+        <option value="2">Mariazinha</option>
+        <option value="3">Joaozinho</option>
+        <option value="4">Josezinho</option>
+    </select><br>
+    
+    <button type="submit">Enviar</button>
+</form>   
+
+</body>
+</html>

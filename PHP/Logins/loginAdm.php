@@ -1,6 +1,6 @@
 <?php
 
-require_once "..\Classes\Mapper\ProfessorMapper.php";
+require_once "..\Classes\Mapper\AdministradorMapper.php";
 require_once "..\Classes\Professor.php";
 
 
@@ -14,15 +14,15 @@ $password = "";
 try {
     $conn = new PDO("mysql:host=localhost;dbname=dbacademico", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    ProfessorMapper::setConnection($conn);
+    AdministradorMapper::setConnection($conn);
  
 
-    if (ProfessorMapper::autenticacao($matricula, $senha)) {
+    if (AdministradorMapper::autenticacao($matricula, $senha)) {
 
-        echo "Login bem-sucedido!";
+        header('Location: ../../homeAdm.html');
     } else {
 
-        header('Location: ../../loginProfessor.html');
+        header('Location: ../../loginAdm.html');
     }
 } catch (PDOException $e) {
     echo "Erro na conexão com o banco de dados: " . $e->getMessage();

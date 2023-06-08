@@ -1,6 +1,6 @@
 <?php
 
-require_once "..\Classes\Gateway\AdministradorGateway.php";
+require_once "..\Classes\Mapper\AdministradorMapper.php";
 require_once "..\Classes\Administrador.php";
 
 $username = "root";
@@ -11,26 +11,18 @@ $password = "";
     $matricula= $_POST['matricula'];
 
 
-
     try {
         $conn = new PDO ('mysql:host=localhost; dbname=dbacademico', $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        Administrador::setConnection($conn);    
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        AdministradorGateway::setConnection($conn);
+        AdministradorMapper::setConnection($conn);    
 
         $adm = new Administrador();
-        $adm -> nome = $nome;
-        $adm -> matricula = $matricula;
-        $adm -> senha = $senha;
-        $adm -> save();
+        $adm -> setNome($nome);
+        $adm -> setMatricula($matricula);
+        $adm -> setSenha($senha);
+       
+        AdministradorMapper::save($adm);
 
-        $departamento = Administrador::all();
-        foreach ($departamento as $admin) {
-            echo "Nome: " . $admin->nome . "<br>";
-            echo "matricula:  " . $admin->matricula . "<br>";
-            echo "senha: " . $admin->senha . "<br><br>";
-        }
     } catch (Exception $e) {
         print $e->getMessage();
     }

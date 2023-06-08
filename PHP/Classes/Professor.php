@@ -1,57 +1,59 @@
 <?php
-//objeto de dominio -> simular uma aplicação
-//classe Professor 
-class Professor{
-     private static $conn;
-     private $data;
-    
-  public static function setConnection (PDO $conn){
-    self::$conn = $conn;
-    ProfessorGateway::setConnection($conn);
-  }
-    //metodo_set()
-   //metodo magico
-   public function __set($prop,$value){
-      $this->data[$prop]=$value;
-   }//fim do metodo magico
 
+   class Professor {
+      private $idProfessor;
+      private $nomeProfessor;
+      private $especializacao;
+      private $escolaridade;
+      private $matriculaProfessor;
+      private $senhaProfessor;
+      public function getIdProfessor() {
+         return $this->idProfessor;
+      }
 
-  //metodo__get()
-  public function __get($prop){
-     return $this->data[$prop];
-  }//fim do metodo
+      public function setIdProfessor($id) {
+         $this->idProfessor = $id;
+      }
 
-  
-  //metodo find()
-  public static function find($id){
-     $pdg=new ProfessorGateway;
-     return $pdg->find($id, 'professor');
-  }//fim do metodo find() 
+      public function getNomeProfessor() {
+         return $this->nomeProfessor;
+      }
 
-  //metodo all()
-  public static function all($filter = ''){
-     $pdg = new ProfessorGateway;
-     return $pdg->all($filter, 'professor');
-  }//fim do metodo all
+      public function setNomeProfessor($nome) {
+         $this->nomeProfessor = $nome;
+      }
 
-  //metodo delete()
-  public function delete(){
-      $pdg = new ProfessorGateway; 
-      return $pdg->delete($this->idProfessor);
-  }//fim do metodo delete()
+      public function getEspecializacao() {
+         return $this->especializacao;
+      }
 
-  //metodo save()
-  public function save(){
-    $pdg = new ProfessorGateway; 
-    return $pdg->save((object)$this->data);
-  }//fim do metodo save()
+      public function setEspecializacao($especializacao) {
+         $this->especializacao = $especializacao;
+      }
 
-  public function autenticacao($user, $password){
-  $pdg = new ProfessorGateway;
-  return $pdg->autenticacao($this->idProfessor, $this->senhaProfessor);
-  }
+      public function getEscolaridade() {
+         return $this->escolaridade;
+      }
 
+      public function setEscolaridade($escolaridade) {
+         $this->escolaridade = $escolaridade;
+      }
 
-}//fim da classe Produto 
+         public function getMatriculaProfessor() {
+         return $this->matriculaProfessor;
+      }
+
+      public function setMatriculaProfessor($matricula) {
+         $this->matriculaProfessor = $matricula;
+      }
+
+      public function getSenhaProfessor() {
+         return $this->senhaProfessor;
+      }
+
+      public function setSenhaProfessor($senha) {
+         $this->senhaProfessor = $senha;
+      }
+   }
 
 ?>
