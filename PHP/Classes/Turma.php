@@ -56,7 +56,7 @@
         }
         
         public function setAluno(Aluno $aluno){
-            $this->alunos[] = array($aluno);
+            $this->alunos[] = $aluno;
         }
         
         public function getAluno()

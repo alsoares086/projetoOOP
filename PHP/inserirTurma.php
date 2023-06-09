@@ -17,7 +17,7 @@ $password = "";
 $periodo = $_SESSION['periodo'];
 $codigo =  $_SESSION['codigo'];
 $cursoSelecionado = $_SESSION['cursoSelecionado'];
-$idAluno = $_POST['aluno'];
+$idAluno = $_SESSION['aluno'];
 
 
 try {
@@ -40,7 +40,7 @@ try {
         TurmaMapper::save($turma);
     
         $turmaId = $turma->getId(); // Obter o ID da turma recém-inserida
-        TurmaMapper::addAlunosToTurma($turma, $turmaId); // Passar o ID da turma para o método
+        TurmaMapper::addAlunosToTurma($turma); // Passar o ID da turma para o método
     } else {
         echo "Curso não encontrado!";
     }

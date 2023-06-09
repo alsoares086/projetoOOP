@@ -75,6 +75,22 @@ class TurmaMapper
         return $data;
     }//Fim do método all()
 
+    public static function addAlunosToTurma(Turma $turma){
+    $alunos = $turma->getAluno(); // Obtem os alunos selecionados
+    $turmaId = $turma->getId(); // Obtém o ID da turma
+    
+    foreach ($alunos as $aluno) {
+        $alunoId = $aluno->getIdAluno(); // Obtém o ID do aluno
+    
+        $sql = "INSERT INTO aluno_turma (id_aluno, id_turma) VALUES (:id_aluno, :id_turma)";
+        $stmt = self::$conn->prepare($sql);
+        $stmt->bindParam(':id_aluno', $alunoId);
+        $stmt->bindParam(':id_turma', $turmaId);
+        $stmt->execute();
+    }
+}
+
+    /*
     public static function addAlunosToTurma(Turma $turma)
     {
         $alunos = $turma->getAluno();
@@ -91,7 +107,7 @@ class TurmaMapper
             $stmt->bindParam(':id_turma', $turmaId);
             $stmt->execute();
         }
-    }
+    }*/
     
 }
 
