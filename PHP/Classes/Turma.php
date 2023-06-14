@@ -54,10 +54,15 @@
         {
             return $this->curso;
         }
+// trabalho top
+        public function setAluno(array $alunos){
+            $this->alunos = $alunos;
+        }      
         
+        /*
         public function setAluno(Aluno $aluno){
-            $this->alunos[] = $aluno;
-        }
+            $this->alunos[] = array($aluno);
+        }*/
         
         public function getAluno()
         {

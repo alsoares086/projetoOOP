@@ -82,6 +82,13 @@ class AlunoMapper {
         return true; 
     
     }//fim do método autenticacao()
+
+    public static function allAlunos(){
+    $sql = "SELECT * FROM aluno";
+    $stmt = self::$conn->query($sql);
+    $alunos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $alunos;
+    }
 }
 
 ?>

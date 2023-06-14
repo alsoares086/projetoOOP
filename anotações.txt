@@ -1,0 +1,3 @@
+Trabalhar na tabela curso_disciplina
+Trabalhar na tabela cursando_periodo
+Tentar exibir os dados da tabela cursando_periodo

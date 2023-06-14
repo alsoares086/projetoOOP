@@ -4,6 +4,7 @@
         private $idDisciplina;
         private $nomeDisciplina;
         private $cargaHoraria;
+        private $curso;
 
         public function getIdDisciplina() {
             return $this->idDisciplina;
@@ -27,6 +28,17 @@
     
         public function setCargaHoraria($cargaHoraria) {
             $this->cargaHoraria = $cargaHoraria;
+        }
+
+        //Coma uma disciplina pode estar em um ou mais cursos, faz mais sentido inserir esses campos abaixos nessas classes
+        public function setCurso(array $curso)
+        {
+            $this->curso = $curso;
+        }
+        
+        public function getCurso()
+        {
+            return $this->curso;
         }
     }
 
