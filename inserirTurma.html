@@ -15,52 +15,79 @@
 </head>
 
 <body>
-    <form action="PHP/sessaoDadosTurma.php" method="POST" class="m-3">
+    <form action="PHP/sessoes/sessaoDadosTurma.php" method="POST" class="m-3">
         <label for="codigo">Código:</label>
         <input type="text" name="codigo" id="codigo" required><br>
     
-        <label for="periodo">Período:</label>
-        <input type="text" name="periodo" id="periodo" required><br>
+        <label for="curso">Período:</label>
+        <select name="periodo" id="periodo" required>
+            <option value="">Selecione uma opção</option>
+            <option value="1">1º período</option>
+            <option value="2">2º período</option>
+            <option value="3">3º período</option>
+            <option value="4">4º período</option>
+            <option value="5">5º período</option>
+            <option value="6">6º período</option>
+            <option value="7">7º período</option>
+            <option value="8">8º período</option>
+            <option value="9">9º período</option>
+            <option value="10">10º período</option>
+        </select><br>
+        
+        <label for="tipo" class="form-label m-3 ">Tipo de curso: </label>
+        <select id="tipo" name="tipo" class="form-control" required>
+            <option value="">Escolha o tipo de curso</option>
+            <option value="Médio Integrado">Médio Integrado</option>
+            <option value="Técnico Subsequente">Técnico Subsequente</option>
+            <option value="Superior de Tecnologia">Superior de Tecnologia</option>
+            <option value="Bacharelado">Bacharelado</option>
+            <option value="Licenciatura">Licenciatura</option>
+            <option value="Especialização">Especialização</option>
+            <option value="Mestrado">Mestrado</option>
+        </select><br>
 
-    
+        <div class="cursos-container-select">
+            
+        </div>
+        <!--
         <label for="curso">Curso:</label>
         <select name="curso" id="curso" required>
             <option value="">Selecione um curso</option>
-            <option value="Meio Ambiente">Meio Ambiente  - Médio Integrado - Vespertino</option>
-            <option value="Agropecuaria">Agropecuária  - Médio Integrado - Vespertino</option>
-            <option value="Edificacoes">Edificações  - Médio Integrado - Vespertino</option>
-            <option value="Redes de Computadores">Redes de Computadores  - Médio Integrado - Vespertino</option>
-            <option value="Informatica">Informática  - Médio Integrado - Vespertino</option>
-            <option value="Administracao">Administração  - Médio Integrado - Vespertino</option>
-            <option value="Florestas">Florestas  - Médio Integrado - Vespertino</option>
-            <option value="Finanças">Finanças  - Médio Integrado - Vespertino</option>
-            <option value="Agricultura">Agricultura  - Médio Integrado - Vespertino</option>
-            <option value="Alimentos">Alimentos  - Médio Integrado - Vespertino</option>
-            <option value="Biotecnologia">Biotecnologia  - Médio Integrado - Vespertino</option>
-            <option value="Recursos Pesqueiros">Recursos Pesqueiros  - Médio Integrado - Vespertino</option>
-            <option value="Agroecologia">Agroecologia  - Técnico Subsequente - Vespertino</option>
-            <option value="Agronegocio">Agronegócio  - Técnico Subsequente - Vespertino</option>
-            <option value="Agroindustria">Agroindústria  - Técnico Subsequente - Vespertino</option>
-            <option value="Gestao Ambiental">Gestão Ambiental  - Técnico Subsequente - Vespertino</option>
-            <option value="Logistica">Logística  - Técnico Subsequente - Vespertino</option>
-            <option value="Processos Escolares">Processos Escolares  - Técnico Subsequente - Vespertino</option>
-            <option value="Agronegocio">Agronegócio  - Superior de Tecnologia - Matutino</option>
-            <option value="Agroindustria">Agroindústria  - Superior de Tecnologia - Matutino</option>
-            <option value="Gestao Ambiental">Gestão Ambiental  - Superior de Tecnologia - Noturno</option>
-            <option value="Logistica">Logística  - Superior de Tecnologia - Noturno</option>
-            <option value="Sistemas para Internet">Sistemas para Internet  - Superior de Tecnologia - Vespertino</option>
-            <option value="Processos Escolares">Processos Escolares  - Licenciatura - Noturno</option>
-            <option value="Administraçao">Administração  - Licenciatura - Vespertino</option>
-            <option value="Zootecnia">Zootecnia  - Graduação - Matutino</option>
-            <option value="Ciencias Biologicas">Ciências Biológicas  - Licenciatura - Vespertino</option>
-            <option value="Fisica">Física  - Licenciatura - Matutino</option>
-            <option value="Matematica">Matemática  - Licenciatura - Matutino</option>
-            <option value="Quimica">Química  - Licenciatura - Matutino</option>
-            <option value="Logistica Empresarial">Logística Empresarial  - Pós-graduação - Noturno</option>
-            <option value="Educacao Profissional">Educação Profissional - EPT - Pós-graduação - Noturno</option>
-            <option value="Projeto Agricultor Familiar">Projeto Agricultor Familiar  - Pós-graduação - Noturno</option>
-            <option value="Mestrado em EPT">Mestrado em EPT  - Pós-graduação - Noturno</option>
-        </select><br>
+            <option value="1">Meio Ambiente  - Médio Integrado - Vespertino</option>
+            <option value="2">Agropecuária  - Médio Integrado - Vespertino</option>
+            <option value="3">Edificações  - Médio Integrado - Vespertino</option>
+            <option value="4">Redes de Computadores  - Médio Integrado - Vespertino</option>
+            <option value="5">Informática  - Médio Integrado - Vespertino</option>
+            <option value="6">Administração  - Médio Integrado - Vespertino</option>
+            <option value="7">Florestas  - Médio Integrado - Vespertino</option>
+            <option value="8">Finanças  - Médio Integrado - Vespertino</option>
+            <option value="9">Agricultura  - Médio Integrado - Vespertino</option>
+            <option value="10">Alimentos  - Médio Integrado - Vespertino</option>
+            <option value="11">Biotecnologia  - Médio Integrado - Vespertino</option>
+            <option value="12">Recursos Pesqueiros  - Médio Integrado - Vespertino</option>
+            <option value="13">Agroecologia  - Técnico Subsequente - Vespertino</option>
+            <option value="14">Agronegócio  - Técnico Subsequente - Vespertino</option>
+            <option value="15">Agroindústria  - Técnico Subsequente - Vespertino</option>
+            <option value="16">Gestão Ambiental  - Técnico Subsequente - Vespertino</option>
+            <option value="17">Logística  - Técnico Subsequente - Vespertino</option>
+            <option value="18">Processos Escolares  - Técnico Subsequente - Vespertino</option>
+            <option value="19">Agronegócio  - Superior de Tecnologia - Matutino</option>
+            <option value="20">Agroindústria  - Superior de Tecnologia - Matutino</option>
+            <option value="21">Gestão Ambiental  - Superior de Tecnologia - Noturno</option>
+            <option value="22">Logística  - Superior de Tecnologia - Noturno</option>
+            <option value="23">Sistemas para Internet  - Superior de Tecnologia - Vespertino</option>
+            <option value="24">Processos Escolares  - Licenciatura - Noturno</option>
+            <option value="25">Administração  - Licenciatura - Vespertino</option>
+            <option value="26">Zootecnia  - Graduação - Matutino</option>
+            <option value="27">Ciências Biológicas  - Licenciatura - Vespertino</option>
+            <option value="28">Física  - Licenciatura - Matutino</option>
+            <option value="29">Matemática  - Licenciatura - Matutino</option>
+            <option value="30">Química  - Licenciatura - Matutino</option>
+            <option value="31">Logística Empresarial  - Pós-graduação - Noturno</option>
+            <option value="32">Educação Profissional - EPT - Pós-graduação - Noturno</option>
+            <option value="33">Projeto Agricultor Familiar  - Pós-graduação - Noturno</option>
+            <option value="34">Mestrado em EPT  - Pós-graduação - Noturno</option>
+        </select><br> -->
     
         <button type="submit">Enviar</button>
     </form>

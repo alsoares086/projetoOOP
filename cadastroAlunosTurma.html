@@ -16,23 +16,15 @@
 
 <body>
 
-<form method="POST" action="PHP/sessaoAlunoTurma.php">
+<form method="POST" action="PHP/sessoes/sessaoAlunoTurma.php">
     <label for="aluno">Alunos:</label><br>
-    
-    <!--
-    <select name="aluno" id="aluno" required >
-        <option value="2">Mariazinha</option>
-        <option value="3">Joaozinho</option>
-        <option value="4">Josezinho</option>
-    </select><br> -->
+  
+    <div id="alunos-container" class="m-3">
 
-    <input type="checkbox" name="aluno" value="2"> Mariazinha<br>
-    <input type="checkbox" name="aluno" value="3"> Joaozinho<br>
-    <input type="checkbox" name="aluno" value="4"> Josezinho<br>
-    <!-- Adicione mais checkboxes conforme necessário -->
+    </div>
 
     <button type="submit">Enviar</button>
 </form>   
-
+    <script src="JS/exibirAlunos.js"></script>
 </body>
 </html>

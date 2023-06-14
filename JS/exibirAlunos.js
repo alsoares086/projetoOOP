@@ -42,6 +42,40 @@ function displayAlunosCheckbox(alunos) {
   }
 }
 
+function sendPOSTRequest(url, data, successCallback, errorCallback) {
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      "Content-type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+    .then(function(response) {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Erro ao enviar solicitação: " + response.status);
+      }
+    })
+    .then(function(responseData) {
+      successCallback(responseData);
+    })
+    .catch(function(error) {
+      errorCallback(error);
+    });
+}
+
+// Chamada da função sendPOSTRequest para buscar os alunos
+sendPOSTRequest('../../projetoOOP/PHP/exibir/exibirAlunos.php', {}, 
+  function(response) {
+    displayAlunosCheckbox(response);
+  },
+  function(error) {
+    console.log(error);
+  }
+);
+
+/*
 // Função para buscar os cursos via AJAX
 function getAlunosCheckbox() {
   var xhr = new XMLHttpRequest();
@@ -61,4 +95,4 @@ function getAlunosCheckbox() {
 }
 
 // Chamada da função para buscar e exibir os cursos
-getAlunosCheckbox();
+getAlunosCheckbox();*/

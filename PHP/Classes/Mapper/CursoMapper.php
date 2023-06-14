@@ -61,6 +61,7 @@ class CursoMapper {
         return $data;
     }//Fim do método all()
 
+    //método findIdCurso()
     public static function findIdCurso($id){
         $sql = "SELECT * FROM curso WHERE idCurso = :id";
         $stmt = self::$conn->prepare($sql);
@@ -77,14 +78,16 @@ class CursoMapper {
         }
     
         return null; // Curso não encontrado
-    }
+    }//fim do método findIdCurso()
 
-    public static function allCursos()
-{
-    $sql = "SELECT * FROM curso";
-    $stmt = self::$conn->query($sql);
-    $cursos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //método findCursoByTipo
+    public static function findCursosByTipo($tipo){
+        $sql = "SELECT nomeCurso FROM curso where tipoCurso = :tipo";
+        $stmt = self::$conn->prepare($sql);
+        $stmt->bindParam(':tipo',$tipo);
+        $stmt->execute();
+        $cursos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $cursos;
-}
+    }//fim do método findCursosByTipo($tipo)
 }    
 ?>
