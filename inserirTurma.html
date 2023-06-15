@@ -15,16 +15,26 @@
 </head>
 
 <body>
-    <form action="PHP/sessaoDadosTurma.php" method="POST" class="m-3">
+    <div class="page">
+
+        <a href="index.html">
+            <div class="logo"></div>
+        </a>
+
+    <form class="formCad" action="PHP/sessaoDadosTurma.php" method="POST" class="m-3">
+        <h1>Inserção de Disciplina</h1>
+        <p>Informe os dados no campo abaixo:</p>
+
         <label for="codigo">Código:</label>
-        <input type="text" name="codigo" id="codigo" required><br>
+        <input type="text" id="codigo" name="codigo" class="form-control" placeholder="Digite o Código" required><br>
+
+      
     
-        <label for="periodo">Período:</label>
-        <input type="text" name="periodo" id="periodo" required><br>
+    
 
     
-        <label for="curso">Curso:</label>
-        <select name="curso" id="curso" required>
+        <label class="form-label" for="curso">Curso:</label>
+        <select name="curso" id="curso" class="form-control" required>
             <option value="">Selecione um curso</option>
             <option value="Meio Ambiente">Meio Ambiente  - Médio Integrado - Vespertino</option>
             <option value="Agropecuaria">Agropecuária  - Médio Integrado - Vespertino</option>
@@ -61,8 +71,23 @@
             <option value="Projeto Agricultor Familiar">Projeto Agricultor Familiar  - Pós-graduação - Noturno</option>
             <option value="Mestrado em EPT">Mestrado em EPT  - Pós-graduação - Noturno</option>
         </select><br>
+
+        <label class="form-label" for="periodo">Período:</label>
+        <select name="curso" id="curso" class="form-control" required>
+            <option value="">Selecione o Período </option>
+            <option value="Primeiro">Primeiro</option>
+            <option value="Segundo">Segundo</option>
+            <option value="Terceiro">Terceiro</option>
+            <option value="Quarto">Quarto</option>
+            <option value="Quinto">Quinto</option>
+            <option value="Sexto">Sexto</option>
+            <option value="Sétimo">Sétimo</option>
+            <option value="Oitavo">Oitavo</option>
+            <option value="Nono">Nono</option>
+            <option value="Décimo">Décimo</option>
+        </select><br>
     
-        <button type="submit">Enviar</button>
+        <button class="btn m-3 form-element1">Enviar</button>
     </form>
 </body>
 

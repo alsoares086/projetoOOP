@@ -15,24 +15,52 @@
 </head>
 
 <body>
+    <div class="page">
 
-<form method="POST" action="PHP/sessaoAlunoTurma.php">
-    <label for="aluno">Alunos:</label><br>
+        <a href="index.html">
+            <div class="logo"></div>
+        </a>
+
+        
+
+    <form  class="formCad" method="POST" action="PHP/sessaoAlunoTurma.php">
+       
+        <h1>Cadastro de Turma</h1>
+        <p>Informe os alunos no campo abaixo:</p>
     
-    <!--
-    <select name="aluno" id="aluno" required >
-        <option value="2">Mariazinha</option>
-        <option value="3">Joaozinho</option>
-        <option value="4">Josezinho</option>
-    </select><br> -->
+        <label for="aluno">Alunos:</label><br>
+        <select name="aluno[]" id="aluno" required multiple>
+        
+        <?php
+        // Inclua o arquivo de conexão com o banco de dados
+        require_once "caminho/do/seu/arquivo/de/conexao.php";
+    
+        // Consulta para obter todos os alunos cadastrados no banco de dados
+        $sql = "SELECT idAluno, nomeAluno FROM aluno";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+    
+        // Itere sobre os resultados e crie as opções para cada aluno
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $idAluno = $row['idAluno'];
+            $nomeAluno = $row['nomeAluno'];
+            echo "<option value='$idAluno'>$nomeAluno</option>";
+        }
+    
+        // Feche a conexão com o banco de dados
+        $conn = null;
+        ?>
+    </select><br>
 
-    <input type="checkbox" name="aluno" value="2"> Mariazinha<br>
-    <input type="checkbox" name="aluno" value="3"> Joaozinho<br>
-    <input type="checkbox" name="aluno" value="4"> Josezinho<br>
+    <input class="form-control col-4" type="checkbox" name="aluno" value="2"> Mariazinha<br>
+    <input class="form-control col-4" type="checkbox" name="aluno" value="3"> Joaozinho<br>
+    <input class="form-control col-4" type="checkbox" name="aluno" value="4"> Josezinho<br>
     <!-- Adicione mais checkboxes conforme necessário -->
 
-    <button type="submit">Enviar</button>
+    <button class="btn m-3 form-element1" type="submit">Enviar</button>
 </form>   
+
+</div>
 
 </body>
 </html>
