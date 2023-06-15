@@ -19,8 +19,7 @@
         <label for="codigo">Código:</label>
         <input type="text" id="codigo" name="codigo" class="form-control" placeholder="Digite o Código" required><br>
 
-      
-    
+       
     
         <label for="curso">Período:</label>
         <select name="periodo" id="periodo" required>
@@ -36,21 +35,9 @@
             <option value="9">9º período</option>
             <option value="10">10º período</option>
         </select><br>
-        
-        <label for="tipo" class="form-label m-3 ">Tipo de curso: </label>
-        <select id="tipo" name="tipo" class="form-control" required>
-            <option value="">Escolha o tipo de curso</option>
-            <option value="Médio Integrado">Médio Integrado</option>
-            <option value="Técnico Subsequente">Técnico Subsequente</option>
-            <option value="Superior de Tecnologia">Superior de Tecnologia</option>
-            <option value="Bacharelado">Bacharelado</option>
-            <option value="Licenciatura">Licenciatura</option>
-            <option value="Especialização">Especialização</option>
-            <option value="Mestrado">Mestrado</option>
-        </select><br>
 
-        <div class="cursos-container-select">
-            
+        <div id="cursos-container" class="m-3">
+       
         </div>
         <!--
         <label for="curso">Curso:</label>
@@ -94,6 +81,7 @@
     
         <button class="btn m-3 form-element1">Enviar</button>
     </form>
+    <script src="JS/exibirCursos.js"></script>
 </body>
 
 </html>

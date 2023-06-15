@@ -80,14 +80,5 @@ class CursoMapper {
         return null; // Curso não encontrado
     }//fim do método findIdCurso()
 
-    //método findCursoByTipo
-    public static function findCursosByTipo($tipo){
-        $sql = "SELECT nomeCurso FROM curso where tipoCurso = :tipo";
-        $stmt = self::$conn->prepare($sql);
-        $stmt->bindParam(':tipo',$tipo);
-        $stmt->execute();
-        $cursos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $cursos;
-    }//fim do método findCursosByTipo($tipo)
 }    
 ?>

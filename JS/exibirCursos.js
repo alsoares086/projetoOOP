@@ -1,50 +1,7 @@
-let cursosCheckbox = document.getElementById("cursos-container-checkbox");
-let cursosSelect = document.getElementById("cursos-container-select");
 
+var cursosContainer = document.getElementById("cursos-container");
 
 // Função para criar um elemento checkbox com base nas informações de um curso
-
-function createSelect(curso){
-  var select = document.createElement("select");
-  select.name = "tipo[]";
-  select.id = "tipo[]";
-
-  var defaultOption = document.createElement("option");
-  defaultOption.value = "";
-  defaultOption.textContent = "Escolha um curso";
-  select.appendChild(defaultOption);
-
-  for (var i = 0; i < curso.cursos.length; i++) {
-    var option = document.createElement("option");
-    option.value = curso.cursos[i].idCurso;
-    option.textContent = curso.cursos[i].nomeCurso;
-    select.appendChild(option);
-  }
-
-  // Adicione o select ao elemento pai desejado no HTML
-  var container = document.getElementById("cursos-container-select");
-  container.appendChild(select);
-
-  select.addEventListener("change", function () {
-    var tipoSelecionado = select.value;
-    displayCursosByTipo(tipoSelecionado);
-  });
-
-}
-
-function displayCursosByTipo(tipo) {
-  var cursos = document.getElementsByClassName("curso-item");
-  for (var i = 0; i < cursos.length; i++) {
-    var curso = cursos[i];
-    if (curso.dataset.tipo === tipo || tipo === "") {
-      curso.style.display = "block";
-    } else {
-      curso.style.display = "none";
-    }
-  }
-}
-
-
 function createCheckbox(curso) {
   var checkbox = document.createElement("input");
   checkbox.type = "checkbox";
@@ -83,24 +40,18 @@ function createCheckbox(curso) {
 
   var br = document.createElement("br");
 
-  cursosCheckbox.appendChild(checkbox);
-  cursosCheckbox.appendChild(label);
-  cursosCheckbox.appendChild(br);
+  cursosContainer.appendChild(checkbox);
+  cursosContainer.appendChild(label);
+  cursosContainer.appendChild(br);
 }
 
 // Função para exibir os cursos como checkboxes
-function displayCursosCheckbox(cursos) {
+function displayCursos(cursos) {
   for (var i = 0; i < cursos.length; i++) {
     createCheckbox(cursos[i]);
   }
 }
 
-// Função para exibir os cursos como select
-function displayCursosSelect(cursos) {
-  for (var i = 0; i < cursos.length; i++) {
-    createSelect(cursos[i]);
-  }
-}
 
 function sendPOSTRequest(url, data, successCallback, errorCallback) {
   fetch(url, {
@@ -125,22 +76,12 @@ function sendPOSTRequest(url, data, successCallback, errorCallback) {
     });
 }
 
-/*
-// Chamada da função sendPOSTRequest para buscar os alunos
-sendPOSTRequest('../../projetoOOP/PHP/exibir/exibirCursos.php', {}, 
-  function(response) {
-    displayCursosCheckbox(response);
-    console.log(response);
-  },
-  function(error) {
-    console.log(error);
-  }
-);*/
+
 
 // Chamada da função sendPOSTRequest para buscar os alunos
 sendPOSTRequest('../../projetoOOP/PHP/exibir/exibirCursos.php', {}, 
   function(response) {
-    displayCursosCheckbox(response);
+    displayCursos(response);
     console.log(response);
   },
   function(error) {
