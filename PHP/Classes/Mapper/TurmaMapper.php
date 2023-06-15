@@ -28,8 +28,7 @@ class TurmaMapper
 
     }*/
 
-    public static function save(Turma $turma)
-    {
+    public static function save(Turma $turma){
         $codigo = $turma->getCodigo();
         $periodo = $turma->getPeriodo();
         $cursoId = $turma->getCurso()->getId();

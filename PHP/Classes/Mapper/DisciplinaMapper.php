@@ -22,9 +22,9 @@ class DisciplinaMapper {
         $stmt->bindParam(':nomeDisciplina', $nomeDisciplina);
         $stmt->bindParam(':cargaHorariaDisciplina', $cargaHorariaDisciplina);
         $stmt->execute();
-        /*
+        
         $id = self::$conn->lastInsertId();
-        $turma->setId($id);*/
+        $disciplina->setIdDisciplina($id);
    }// Fim do método save()
    
 
@@ -56,5 +56,21 @@ class DisciplinaMapper {
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }//Fim do método all()
+
+    public static function addCursoDisciplina(Disciplina $disciplina) {
+        $cursos = $disciplina->getCurso();
+        $discId = $disciplina->getIdDisciplina();
+    
+        foreach ($cursos as $curso) {
+            $cursoId = $curso->getId();
+    
+            $sql = "INSERT INTO curso_disciplinas (disciplina, curso) VALUES (:disciplina, :curso)";
+            $stmt = self::$conn->prepare($sql);
+            $stmt->bindParam(':disciplina', $discId);
+            $stmt->bindParam(':curso', $cursoId);
+            $stmt->execute();
+        }
+    }
+    
 }
 ?>

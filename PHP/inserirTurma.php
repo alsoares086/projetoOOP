@@ -17,7 +17,7 @@ $password = "";
 $periodo = $_SESSION['periodo'];
 $codigo =  $_SESSION['codigo'];
 $cursoSelecionado = $_SESSION['cursoSelecionado'];
-$idAluno = $_SESSION['aluno'];
+$idAluno = $_SESSION['alunos'];
 
 
 try {
@@ -31,12 +31,22 @@ try {
     $turma->setPeriodo($periodo);
     $turma->setCodigo($codigo);
     
-    $curso = CursoMapper::findNomeCurso($cursoSelecionado);
-    $estudante = AlunoMapper::find($idAluno);
+    $curso = CursoMapper::findIdCurso($cursoSelecionado);
+    $alunos = array();
+
+    foreach ($idAluno as $alunoId) {
+        $aluno = AlunoMapper::find($alunoId);
+
+        if ($aluno) {
+            $alunos[] = $aluno;
+        } else {
+            echo "Aluno não encontrado para o ID: " . $alunoId;
+        }
+    }
     
     if ($curso) {
         $turma->setCurso($curso);
-        $turma->setAluno($estudante);
+        $turma->setAluno($alunos);
         TurmaMapper::save($turma);
     
         $turmaId = $turma->getId(); // Obter o ID da turma recém-inserida
