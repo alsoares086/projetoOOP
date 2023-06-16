@@ -22,11 +22,16 @@
         <label for="nome" class="m-3">Carga Horária </label>
         <input type="text" id="cargaHoraria" name="cargaHoraria" placeholder="Digite a carga horaria" required><br>
        
+        <!--
         <label for="curso" class="m-3">Selecione em qual(is) curso(s) a disciplina irá ser inserida:</label><br>
 
         <div id="cursos-container" class="m-3">
        
-        </div>
+        </div> -->
+        <label for="curso" class="m-3" >Digite o nome do curso:</label>
+        <input type="text" id="curso" name="curso" placeholder="Digite o nome do curso">
+    
+        <div id="lista-cursos"></div>
 
         <!--
         <input type="checkbox" name="curso[]" value="1" class="m-3"> Meio Ambiente - Médio Integrado - Vespertino<br>
@@ -68,7 +73,8 @@
         <button class="btn m-3 form-element1">Cadastrar</button>
         </form>
     </div>
-    <script src="JS/exibirCursos.js"></script>
+    <script src="JS/cursoMatch.js"></script>
+    <!--<script src="JS/exibirCursos.js"></script>-->
 </body>
 
 </html>
