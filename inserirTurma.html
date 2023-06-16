@@ -15,14 +15,26 @@
 </head>
 
 <body>
-    <form action="PHP/sessoes/sessaoDadosTurma.php" method="POST" class="m-3">
-        <label for="codigo">Código:</label>
+
+    <div class="page">
+
+        <a href="index.html">
+            <div class="logo"></div>
+        </a>
+
+
+    <form class="formCad" action="PHP/sessoes/sessaoDadosTurma.php" method="POST" class="m-3">
+        <h1>Inserir Disciplina</h1>
+        <p>Informe os dados no campo abaixo:</p>
+        
+
+        <label class="form-label" for="codigo">Código:</label>
         <input type="text" id="codigo" name="codigo" class="form-control" placeholder="Digite o Código" required><br>
 
        
     
-        <label for="curso">Período:</label>
-        <select name="periodo" id="periodo" required>
+        <label class="form-label for="curso">Período:</label>
+        <select class="form-control" name="periodo" id="periodo" required>
             <option value="">Selecione uma opção</option>
             <option value="1">1º período</option>
             <option value="2">2º período</option>
@@ -81,6 +93,7 @@
     
         <button class="btn m-3 form-element1">Enviar</button>
     </form>
+    </div>  
     <script src="JS/exibirCursos.js"></script>
 </body>
 

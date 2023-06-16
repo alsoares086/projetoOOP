@@ -14,13 +14,23 @@
 
 <body>
 
+    <div class="page">
 
-    <form method="POST" action="PHP/sessoes/sessaoDisciplina.php">
-        <label for="nome" class="m-3">Nome da Disciplina: </label>
-        <input type="text" id="nome" name="nome" placeholder="Digite o nome" required><br>
+        <a href="index.html">
+            <div class="logo"></div>
+        </a>
+
+
+    <form class="formCad" method="POST" action="PHP/sessoes/sessaoDisciplina.php">
+
+        <h1>Cadastro de Disciplina</h1>
+        <p>Informe os dados no campo abaixo:</p>
+
+        <label for="nome" class="form-label">Nome da Disciplina: </label>
+        <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite o nome" required><br>
     
-        <label for="nome" class="m-3">Carga Horária </label>
-        <input type="text" id="cargaHoraria" name="cargaHoraria" placeholder="Digite a carga horaria" required><br>
+        <label for="nome" class="form-label">Carga Horária </label>
+        <input type="text" id="cargaHoraria" name="cargaHoraria" class="form-control" placeholder="Digite a carga horaria" required><br>
        
         <!--
         <label for="curso" class="m-3">Selecione em qual(is) curso(s) a disciplina irá ser inserida:</label><br>
@@ -28,8 +38,8 @@
         <div id="cursos-container" class="m-3">
        
         </div> -->
-        <label for="curso" class="m-3" >Digite o nome do curso:</label>
-        <input type="text" id="curso" name="curso" placeholder="Digite o nome do curso">
+        <label for="curso" class="form-label" >Digite o nome do curso:</label>
+        <input type="text" id="curso" name="curso" class="form-control" placeholder="Digite o nome do curso">
     
         <div id="lista-cursos"></div>
 
@@ -73,6 +83,8 @@
         <button class="btn m-3 form-element1">Cadastrar</button>
         </form>
     </div>
+</div>
+    
     <script src="JS/cursoMatch.js"></script>
     <!--<script src="JS/exibirCursos.js"></script>-->
 </body>
