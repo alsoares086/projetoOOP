@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function loadCursos() {
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'PHP/exibir/exibirCursos.php', true);
+        xhr.open('GET', '../operacoes/exibir/exibirCursos.php', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
 
         xhr.onreadystatechange = function () {
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var cursoItem = document.createElement('div');
             var checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
-            checkbox.name = 'curso[]';
+            checkbox.name = 'cursos[]';
             checkbox.value = curso.idCurso;
             checkbox.classList.add('ml-3');
             cursoItem.appendChild(checkbox);

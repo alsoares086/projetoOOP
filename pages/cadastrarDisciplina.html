@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/cad.css">
+    <link rel="icon" type="image/png" href="IMAGENS/apple-icon.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Cadastro de Disciplina</title>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <a href="../index.html">
+            <div class="logo"></div>
+        </a>
+
+
+    <form class="formCad" method="POST" action="../operacoes/sessoes/sessaoDisciplina.php">
+
+        <h1>Cadastro de Disciplina</h1>
+        <p>Informe os dados no campo abaixo:</p>
+
+        <label for="nome" class="form-label">Nome da Disciplina: </label>
+        <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite o nome" required><br>
+    
+        <label for="nome" class="form-label">Carga Horária </label>
+        <input type="text" id="cargaHoraria" name="cargaHoraria" class="form-control" placeholder="Digite a carga horaria" required><br>
+       
+        <!--
+        <label for="curso" class="m-3">Selecione em qual(is) curso(s) a disciplina irá ser inserida:</label><br>
+
+        <div id="cursos-container" class="m-3">
+       
+        </div> -->
+        <label for="curso" class="form-label" >Digite o nome do curso:</label>
+        <input type="text" id="curso" name="curso" class="form-control" placeholder="Digite o nome do curso">
+    
+        <div id="lista-cursos"></div>
+
+        <!--
+        <input type="checkbox" name="curso[]" value="1" class="m-3"> Meio Ambiente - Médio Integrado - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="2" class="m-3"> Agropecuária - Médio Integrado - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="3" class="m-3"> Edificações - Médio Integrado - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="4" class="m-3"> Redes de Computadores - Médio Integrado - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="5" class="m-3"> Informática - Médio Integrado - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="6" class="m-3"> Administração - Médio Integrado - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="7" class="m-3"> Florestas - Médio Integrado - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="8" class="m-3"> Finanças - Médio Integrado - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="9" class="m-3"> Agricultura - Médio Integrado - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="10" class="m-3"> Alimentos - Médio Integrado - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="11" class="m-3"> Biotecnologia - Médio Integrado - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="12" class="m-3"> Recursos Pesqueiros - Médio Integrado - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="13" class="m-3"> Agroecologia - Técnico Subsequente - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="14" class="m-3"> Agronegócio - Técnico Subsequente - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="15" class="m-3"> Agroindústria - Técnico Subsequente - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="16" class="m-3"> Gestão Ambiental - Técnico Subsequente - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="17" class="m-3"> Logística - Técnico Subsequente - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="18" class="m-3"> Processos Escolares - Técnico Subsequente - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="19" class="m-3"> Agronegócio - Superior de Tecnologia - Matutino<br>
+        <input type="checkbox" name="curso[]" value="20" class="m-3"> Agroindústria - Superior de Tecnologia - Matutino<br>
+        <input type="checkbox" name="curso[]" value="21" class="m-3"> Gestão Ambiental - Superior de Tecnologia - Noturno<br>
+        <input type="checkbox" name="curso[]" value="22" class="m-3"> Logística - Superior de Tecnologia - Noturno<br>
+        <input type="checkbox" name="curso[]" value="23" class="m-3"> Sistemas para Internet - Superior de Tecnologia - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="24" class="m-3"> Processos Escolares - Licenciatura - Noturno<br>
+        <input type="checkbox" name="curso[]" value="25" class="m-3"> Administração - Licenciatura - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="26" class="m-3"> Zootecnia - Graduação - Matutino<br>
+        <input type="checkbox" name="curso[]" value="27" class="m-3"> Ciências Biológicas - Licenciatura - Vespertino<br>
+        <input type="checkbox" name="curso[]" value="28" class="m-3"> Física - Licenciatura - Matutino<br>
+        <input type="checkbox" name="curso[]" value="29" class="m-3"> Matemática - Licenciatura - Matutino<br>
+        <input type="checkbox" name="curso[]" value="30" class="m-3"> Química - Licenciatura - Matutino<br>
+        <input type="checkbox" name="curso[]" value="31" class="m-3"> Logística Empresarial - Pós-graduação - Noturno<br>
+        <input type="checkbox" name="curso[]" value="32" class="m-3"> Educação Profissional - EPT - Pós-graduação - Noturno<br>
+        <input type="checkbox" name="curso[]" value="33" class="m-3"> Projeto Agricultor Familiar - Pós-graduação - Noturno<br>
+        <input type="checkbox" name="curso[]" value="34" class="m-3"> Mestrado em EPT - Pós-graduação - Noturno<br>
+        -->
+    
+        <button class="btn m-3 form-element1">Cadastrar</button>
+        </form>
+    </div>
+</div>
+    
+    <script src="../JS/cursoMatch.js"></script>
+    <!--<script src="JS/exibirCursos.js"></script>-->
+</body>
+
+</html>
