@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var cursoItem = document.createElement('div');
             var checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
-            checkbox.name = 'cursos[]';
+            checkbox.name = 'cursos';
             checkbox.value = curso.idCurso;
             checkbox.classList.add('ml-3');
             cursoItem.appendChild(checkbox);

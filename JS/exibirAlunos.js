@@ -66,7 +66,7 @@ function sendPOSTRequest(url, data, successCallback, errorCallback) {
 }
 
 // Chamada da função sendPOSTRequest para buscar os alunos
-sendPOSTRequest('../../projetoOOP/PHP/exibir/exibirAlunos.php', {}, 
+sendPOSTRequest('../../projetoOOP/operacoes/exibir/exibirAlunos.php', {}, 
   function(response) {
     displayAlunosCheckbox(response);
   },
@@ -75,24 +75,4 @@ sendPOSTRequest('../../projetoOOP/PHP/exibir/exibirAlunos.php', {},
   }
 );
 
-/*
-// Função para buscar os cursos via AJAX
-function getAlunosCheckbox() {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
-        var alunos = JSON.parse(xhr.responseText);
-        displayAlunosCheckbox(alunos);
-      } else {
-        console.log("Erro ao buscar alunos: " + xhr.status);
-      }
-    }
-  };
-
-  xhr.open("GET", "http://localhost/EduManage/PHP/exibir/exibirAlunos.php", true);
-  xhr.send();
-}
-
-// Chamada da função para buscar e exibir os cursos
-getAlunosCheckbox();*/
+g

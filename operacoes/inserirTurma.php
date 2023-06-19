@@ -3,18 +3,17 @@
 session_start();
 // inserirTurma.php
 
-require_once "../../mapper/CursoMapper.php";
-require_once "../../mapper/TurmaMapper.php";
-require_once "../../mapper/AlunoMapper.php";
-require_once "../../modelos/Turma.php";
-require_once "../../modelos/Curso.php";
-require_once "../../modelos/Aluno.php";
+require_once "../mapper/CursoMapper.php";
+require_once "../mapper/TurmaMapper.php";
+require_once "../mapper/AlunoMapper.php";
+require_once "../modelos/Turma.php";
+require_once "../modelos/Curso.php";
+require_once "../modelos/Aluno.php";
 
 
 $username = "root";
 $password = "";
 
-$periodo = $_SESSION['periodo'];
 $codigo =  $_SESSION['codigo'];
 $cursoSelecionado = $_SESSION['cursoSelecionado'];
 $idAluno = $_SESSION['alunos'];
@@ -28,10 +27,9 @@ try {
     AlunoMapper::setConnection($conn);
 
     $turma = new Turma();
-    $turma->setPeriodo($periodo);
     $turma->setCodigo($codigo);
     
-    $curso = CursoMapper::findIdCurso($cursoSelecionado);
+    $curso = CursoMapper::find($cursoSelecionado);
     $alunos = array();
 
     foreach ($idAluno as $alunoId) {

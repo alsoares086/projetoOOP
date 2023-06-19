@@ -4,11 +4,9 @@ session_start();
 
     try{
 
-        $periodo = $_POST['periodo'];
         $codigo = $_POST['codigo'];
-        $cursoSelecionado = $_POST['curso'];
+        $cursoSelecionado = $_POST['cursos'];
 
-        $_SESSION['periodo'] = $periodo;
         $_SESSION['codigo'] = $codigo;
         $_SESSION['cursoSelecionado'] = $cursoSelecionado;
 

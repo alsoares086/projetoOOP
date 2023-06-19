@@ -12,31 +12,13 @@ class TurmaMapper
     }
 
     
-    /*
-    public static function save(Turma $turma)
-    {
-        $codigo = $turma->getCodigo();
-        $periodo = $turma->getPeriodo();
-        $cursoId = $turma->getCurso()->getId();
-    
-        $sql = "INSERT INTO turma (codigo, periodo, curso) VALUES (:codigo, :periodo, :idCurso)";
-        $stmt = self::$conn->prepare($sql);
-        $stmt->bindParam(':codigo', $codigo);
-        $stmt->bindParam(':periodo', $periodo);
-        $stmt->bindParam(':idCurso', $cursoId);
-        $stmt->execute();
-
-    }*/
-
     public static function save(Turma $turma){
         $codigo = $turma->getCodigo();
-        $periodo = $turma->getPeriodo();
         $cursoId = $turma->getCurso()->getId();
     
-        $sql = "INSERT INTO turma (codigo, periodo, curso) VALUES (:codigo, :periodo, :idCurso)";
+        $sql = "INSERT INTO turma (codigo, curso) VALUES (:codigo, :idCurso)";
         $stmt = self::$conn->prepare($sql);
         $stmt->bindParam(':codigo', $codigo);
-        $stmt->bindParam(':periodo', $periodo);
         $stmt->bindParam(':idCurso', $cursoId);
         $stmt->execute();
 
@@ -89,24 +71,6 @@ class TurmaMapper
     }
 }
 
-    /*
-    public static function addAlunosToTurma(Turma $turma)
-    {
-        $alunos = $turma->getAluno();
-        $turmaId = $turma->getId(); // Obtém o ID da turma
-    
-        foreach ($alunos as $alunoArray) {
-            $aluno = $alunoArray[0]; // Obtém o objeto Aluno do array
-    
-            $alunoId = $aluno->getIdAluno();
-    
-            $sql = "INSERT INTO aluno_turma (id_aluno, id_turma) VALUES (:id_aluno, :id_turma)";
-            $stmt = self::$conn->prepare($sql);
-            $stmt->bindParam(':id_aluno', $alunoId);
-            $stmt->bindParam(':id_turma', $turmaId);
-            $stmt->execute();
-        }
-    }*/
     
 }
 

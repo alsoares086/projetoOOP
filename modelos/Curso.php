@@ -2,7 +2,7 @@
 
     class Curso{
         private $nomeCurso;
-        private $turnoCurso;
+        private $turno;
         private $tipoCurso;
         private $cargaHoraria;
         private $id;
@@ -15,11 +15,11 @@
             $this->nomeCurso = $nomeCurso;
         }
     
-        public function getTurnoCurso() {
+        public function getTurno() {
             return $this->turno;
         }
     
-        public function setTurnoCurso($turnoCurso) {
+        public function setTurno($turnoCurso) {
             $this->turno = $turnoCurso;
         }
     

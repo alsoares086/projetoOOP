@@ -22,7 +22,7 @@ try {
         echo "Login bem-sucedido!";
     } else {
 
-        header('Location: ../../loginProfessor.html');
+        header('Location: ../../pages/loginProfessor.html');
     }
 } catch (PDOException $e) {
     echo "Erro na conexão com o banco de dados: " . $e->getMessage();

@@ -1,5 +1,4 @@
 <?php
-
 // Classe CursoMapper
 class CursoMapper {
 
@@ -46,25 +45,6 @@ class CursoMapper {
     {
         $sql = "SELECT * FROM curso WHERE idCurso = :id";
         $stmt = self::$conn->prepare($sql);
-        $stmt->bindParam(':id', $id);
-        $stmt->execute();
-        $data = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $data;
-    }
-
-    // Método all()
-    public static function all()
-    {
-        $sql = "SELECT * FROM curso";
-        $stmt = self::$conn->query($sql);
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $data;
-    }//Fim do método all()
-
-    //método findIdCurso()
-    public static function findIdCurso($id){
-        $sql = "SELECT * FROM curso WHERE idCurso = :id";
-        $stmt = self::$conn->prepare($sql);
         $stmt->bindParam(':id',$id);
         $stmt->execute();
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -77,8 +57,39 @@ class CursoMapper {
             return $curso;
         }
     
-        return null; // Curso não encontrado
-    }//fim do método findIdCurso()
+        return null;
+    }
 
-}    
+    // Método all()
+    public static function all()
+    {
+        $sql = "SELECT * FROM curso";
+        $stmt = self::$conn->query($sql);
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }//Fim do método all()
+
+    public static function findCursoTipo($tipo) {
+        $sql = "SELECT * FROM curso where tipoCurso = :tipo";
+        $stmt = self::$conn->prepare($sql);
+        $stmt->bindParam(':tipo', $tipo);
+        $stmt->execute();
+    
+        $cursos = array();
+    
+        while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $curso = new Curso();
+            $curso->setId($data['idCurso']);
+            $curso->setNomeCurso($data['nomeCurso']);
+            $curso->setTipoCurso($data['tipoCurso']);
+            $curso->setTurno($data['turno']);
+    
+            $cursos[] = $curso;
+        }
+    
+        return $cursos;
+    }
+     
+}
+    
 ?>

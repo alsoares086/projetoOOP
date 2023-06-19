@@ -52,7 +52,6 @@ function displayCursos(cursos) {
   }
 }
 
-
 function sendPOSTRequest(url, data, successCallback, errorCallback) {
   fetch(url, {
     method: 'POST',
@@ -79,7 +78,7 @@ function sendPOSTRequest(url, data, successCallback, errorCallback) {
 
 
 // Chamada da função sendPOSTRequest para buscar os alunos
-sendPOSTRequest('../../projetoOOP/PHP/exibir/exibirCursos.php', {}, 
+sendPOSTRequest('../../projetoOOP/operacoes/exibir/exibirCursos.php', {}, 
   function(response) {
     displayCursos(response);
     console.log(response);

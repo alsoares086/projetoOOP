@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Jun-2023 às 00:11
+-- Tempo de geração: 19-Jun-2023 às 02:52
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `dacademico`
+-- Banco de dados: `dbacademico`
 --
 
 -- --------------------------------------------------------
@@ -97,24 +97,24 @@ CREATE TABLE `curso` (
 --
 
 INSERT INTO `curso` (`idCurso`, `nomeCurso`, `cargaHorariaCurso`, `tipoCurso`, `turno`) VALUES
-(1, 'Meio Ambiente', 2000, 'Médio Integrado', 'vespertino'),
-(2, 'Agropecuaria', 2000, 'Médio Integrado', 'vespertino'),
-(3, 'Edificacoes', 2000, 'Médio Integrado', 'vespertino'),
-(4, 'Redes de Computadores', 2000, 'Médio Integrado', 'vespertino'),
-(5, 'Informatica', 2000, 'Médio Integrado', 'vespertino'),
-(6, 'Administracao', 2000, 'Médio Integrado', 'vespertino'),
-(7, 'Florestas', 2000, 'Médio Integrado', 'vespertino'),
-(8, 'Financas', 2000, 'Médio Integrado', 'vespertino'),
-(9, 'Agricultura', 2000, 'Médio Integrado', 'vespertino'),
-(10, 'Alimentos', 2000, 'Médio Integrado', 'vespertino'),
-(11, 'Biotecnologia', 2000, 'Médio Integrado', 'vespertino'),
-(12, 'Recursos Pesqueiros', 2000, 'Médio Integrado', 'vespertino'),
-(13, 'Agroecologia', 2000, 'Técnico Subsequente', 'vespertino'),
-(14, 'Agronegocio', 2000, 'Técnico Subsequente', 'vespertino'),
-(15, 'Agroindustria', 2000, 'Técnico Subsequente', 'vespertino'),
-(16, 'Gestao Ambiental', 2000, 'Técnico Subsequente', 'vespertino'),
-(17, 'Logistica', 2000, 'Técnico Subsequente', 'vespertino'),
-(18, 'Processos Escolares', 2000, 'Técnico Subsequente', 'vespertino'),
+(1, 'Meio Ambiente', 2000, 'Medio Integrado', 'vespertino'),
+(2, 'Agropecuaria', 2000, 'Medio Integrado', 'vespertino'),
+(3, 'Edificacoes', 2000, 'Medio Integrado', 'vespertino'),
+(4, 'Redes de Computadores', 2000, 'Medio Integrado', 'vespertino'),
+(5, 'Informatica', 2000, 'Medio Integrado', 'vespertino'),
+(6, 'Administracao', 2000, 'Medio Integrado', 'vespertino'),
+(7, 'Florestas', 2000, 'Medio Integrado', 'vespertino'),
+(8, 'Financas', 2000, 'Medio Integrado', 'vespertino'),
+(9, 'Agricultura', 2000, 'Medio Integrado', 'vespertino'),
+(10, 'Alimentos', 2000, 'Medio Integrado', 'vespertino'),
+(11, 'Biotecnologia', 2000, 'Medio Integrado', 'vespertino'),
+(12, 'Recursos Pesqueiros', 2000, 'Medio Integrado', 'vespertino'),
+(13, 'Agroecologia', 2000, 'Tecnico Subsequente', 'vespertino'),
+(14, 'Agronegocio', 2000, 'Tecnico Subsequente', 'vespertino'),
+(15, 'Agroindustria', 2000, 'Tecnico Subsequente', 'vespertino'),
+(16, 'Gestao Ambiental', 2000, 'Tecnico Subsequente', 'vespertino'),
+(17, 'Logistica', 2000, 'Tecnico Subsequente', 'vespertino'),
+(18, 'Processos Escolares', 2000, 'Tecnico Subsequente', 'vespertino'),
 (19, 'Agronegocio', 3000, 'Superior de Tecnologia', 'matutino'),
 (20, 'Agroindustria', 3000, 'Superior de Tecnologia', 'matutino'),
 (21, 'Gestao Ambiental', 3000, 'Superior de Tecnologia', 'noturno'),
@@ -127,9 +127,9 @@ INSERT INTO `curso` (`idCurso`, `nomeCurso`, `cargaHorariaCurso`, `tipoCurso`, `
 (28, 'Fisica', 4000, 'Licenciatura', 'matutino'),
 (29, 'Matematica', 4000, 'Licenciatura', 'matutino'),
 (30, 'Quimica', 4000, 'Licenciatura', 'matutino'),
-(31, 'Logistica Empresarial', 4000, 'Especialização', 'noturno'),
-(32, 'Educacao Profissional - EPT', 4000, 'Especialização', 'noturno'),
-(33, 'Projeto Agricultor Familiar', 4000, 'Especialização', 'vespertino'),
+(31, 'Logistica Empresarial', 4000, 'Especializacao', 'noturno'),
+(32, 'Educacao Profissional - EPT', 4000, 'Especializacao', 'noturno'),
+(33, 'Projeto Agricultor Familiar', 4000, 'Especializacao', 'vespertino'),
 (34, 'Mestrado em EPT', 2000, 'Mestrado', 'matutino');
 
 -- --------------------------------------------------------
@@ -172,7 +172,8 @@ INSERT INTO `disciplina` (`idDisciplina`, `nomeDisciplina`, `cargaHorariaDiscipl
 (9, 'Economia Empresarial', 45),
 (10, 'Logística e Cadeia de Suprimentos', 60),
 (11, 'Fisica Moderna', 90),
-(12, 'Introducao ao Ensino de Física', 90);
+(12, 'Introducao ao Ensino de Física', 90),
+(18, 'testezinho', 123);
 
 -- --------------------------------------------------------
 
@@ -205,17 +206,8 @@ INSERT INTO `professor` (`idProfessor`, `nomeProfessor`, `escolaridade`, `especi
 CREATE TABLE `turma` (
   `id` int(11) NOT NULL,
   `codigo` varchar(15) NOT NULL,
-  `periodo` varchar(15) NOT NULL,
   `curso` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `turma`
---
-
-INSERT INTO `turma` (`id`, `codigo`, `periodo`, `curso`) VALUES
-(5, '2023-01', '3', 5),
-(7, '123', '3', 9);
 
 --
 -- Índices para tabelas despejadas
@@ -286,49 +278,49 @@ ALTER TABLE `turma`
 -- AUTO_INCREMENT de tabela `administrador`
 --
 ALTER TABLE `administrador`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `aluno`
 --
 ALTER TABLE `aluno`
-  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `aluno_turma`
 --
 ALTER TABLE `aluno_turma`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `curso`
 --
 ALTER TABLE `curso`
-  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de tabela `curso_disciplinas`
 --
 ALTER TABLE `curso_disciplinas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `disciplina`
 --
 ALTER TABLE `disciplina`
-  MODIFY `idDisciplina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idDisciplina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `professor`
 --
 ALTER TABLE `professor`
-  MODIFY `idProfessor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idProfessor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `turma`
 --
 ALTER TABLE `turma`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restrições para despejos de tabelas
