@@ -1,14 +1,24 @@
 <?php
+
+error_reporting(0);
+ini_set('display_errors', 0);
+
 session_start();
 
 $matricula = $_SESSION['matricula'];
 $logado = $_SESSION['logado'];
-$senha = $_SESSION['senha'];
 
 if (isset($logado) && $logado === true) {
-    $matriculaJson = json_encode($matricula);
-    header('Location: ../../pages/homeAdm.html?matricula=' . urlencode($matriculaJson));
+    $response = array(
+        "authenticated" => true,
+        "matricula" => $matricula
+    );
 } else {
-    header('Location: ../../pages/loginAdm.html');
+    $response = array(
+        "authenticated" => false
+    );
 }
+
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>
