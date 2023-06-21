@@ -1,13 +1,13 @@
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('pageshow', function() {
   sendPOSTRequest('../operacoes/logins/checkLogins.php', {}, 
     function(response) {
       if (response.authenticated) {
         console.log('Usuário logado');
-        window.location.href = '../pages/homeAdm.html';
-      } else {
-        setTimeout(function() {
+        //window.location.href = '../pages/homeAdm.html';
+        
+      } else {   
+          console.log(response);      
           window.location.href = '../pages/loginAdm.html';
-        }, 01); // Tempo de espera de 3 segundos (3000 milissegundos)
       }
     },
     function(error) {

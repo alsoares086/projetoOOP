@@ -18,10 +18,11 @@ try {
 
     if (AdministradorMapper::autenticacao($matricula, $senha)) {
         $_SESSION['matricula'] = $matricula;
-        $_SESSION['senha'] = $senha; 
+        $_SESSION['logado'] = true;
+        header('Location: ../../pages/homeAdm.html');
+    } 
  } catch (PDOException $e) {
-    echo "Erro na conexão com o banco de dados: " . $e->getMessage();
+        header('Location: ../../pages/loginAdm.html');
   }
-}
 
 ?>
