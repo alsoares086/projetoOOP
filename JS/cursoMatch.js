@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    
+
     function loadCursos() {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', '../operacoes/exibir/exibirCursos.php', true);
