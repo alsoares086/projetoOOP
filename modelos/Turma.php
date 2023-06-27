@@ -54,7 +54,7 @@
         {
             return $this->curso;
         }
-// trabalho top
+
         public function setAluno(array $alunos){
             $this->alunos = $alunos;
         }      
@@ -67,12 +67,8 @@
         public function getAluno()
         {
             return $this->alunos;
-        }
-         
+        }        
          
     }
-
-
-
 
 ?>
