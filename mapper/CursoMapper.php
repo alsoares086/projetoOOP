@@ -52,7 +52,9 @@ class CursoMapper {
         if ($data) {
             $curso = new Curso();
             $curso->setId($data['idCurso']);
-            // Defina os outros atributos do curso, se houver
+            $curso->setTurno($data['turno']);
+            $curso->setNomeCurso($data['nomeCurso']);
+            $curso->setTipoCurso($data['tipoCurso']);           
     
             return $curso;
         }

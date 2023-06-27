@@ -49,6 +49,8 @@ try {
     
         $turmaId = $turma->getId(); // Obter o ID da turma recém-inserida
         TurmaMapper::addAlunosToTurma($turma); // Passar o ID da turma para o método
+
+        header('Location: ../pages/visualizarTurmas.html');
     } else {
         echo "Curso não encontrado!";
     }

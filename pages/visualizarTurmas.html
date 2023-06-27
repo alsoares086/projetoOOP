@@ -8,9 +8,36 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/adm.css">
     <link rel="icon" type="image/png" href="./IMAGENS/apple-icon.png" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/login.js"></script>
     <title>Turmas</title>
 </head>
 <body>
-    
+
+    <div class="admin-profile">
+        
+        <img src="IMAGENS/administrador.png" alt="Foto do administrador" class="admin-photo" />
+       
+        <h3>Nome do Administrador</h3>
+        <p>Matrícula: 000123456987</p>
+        <p>Email: adm@eduManage.com</p>
+        <a href="loginAdm.html" class="logout-btn">Sair</a>
+    </div>
+
+    <div class="tabela-turma">
+    <table id="turmasTable" >
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Curso</th>
+                <th>Turno</th>
+                <th>Tipo</th>
+                <th>Detalhes</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    </div>
+    <script src="../JS/exibirTurmas.js"></script>
 </body>
 </html>

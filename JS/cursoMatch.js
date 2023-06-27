@@ -22,22 +22,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    
-
     function loadCursos() {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '../operacoes/exibir/exibirCursos.php', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                var response = JSON.parse(xhr.responseText);
-                cursos = response;
-            }
-        };
-
-        xhr.send();
-    }
+        var url = '../operacoes/exibir/exibirCursos.php';
+        var data = {};
+    
+        sendPOSTRequest(url, data, function (response) {
+          cursos = response;
+        }, function (error) {
+          console.error('Erro ao carregar os cursos:', error);
+        });
+      }
 
     function showCursos(cursos) {
         cursoList.innerHTML = '';
@@ -67,3 +61,26 @@ document.addEventListener('DOMContentLoaded', function () {
     // Carrega os cursos ao carregar a página
     loadCursos();
 });
+
+function sendPOSTRequest(url, data, successCallback, errorCallback) {
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+      .then(function(response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Erro ao enviar solicitação: " + response.status);
+        }
+      })
+      .then(function(responseData) {
+        successCallback(responseData);
+      })
+      .catch(function(error) {
+        errorCallback(error);
+      });
+  }

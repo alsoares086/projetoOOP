@@ -3,7 +3,6 @@ window.addEventListener('pageshow', function() {
     function(response) {
       if (response.authenticated) {
         console.log('Usuário logado');
-        //window.location.href = '../pages/homeAdm.html';
         
       } else {   
           console.log(response);      
