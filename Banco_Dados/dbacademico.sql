@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Jun-2023 às 23:32
+-- Tempo de geração: 29-Jun-2023 às 03:39
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -92,7 +92,9 @@ INSERT INTO `aluno_turma` (`id`, `id_aluno`, `id_turma`) VALUES
 (11, 1, 6),
 (12, 3, 6),
 (13, 3, 7),
-(14, 4, 7);
+(14, 4, 7),
+(15, 1, 8),
+(16, 2, 8);
 
 -- --------------------------------------------------------
 
@@ -234,7 +236,8 @@ INSERT INTO `turma` (`id`, `codigo`, `curso`) VALUES
 (2, '202302', 23),
 (3, '202303', 7),
 (6, '202304', 27),
-(7, '202305', 23);
+(7, '202305', 23),
+(8, '202306', 3);
 
 --
 -- Índices para tabelas despejadas
@@ -317,7 +320,7 @@ ALTER TABLE `aluno`
 -- AUTO_INCREMENT de tabela `aluno_turma`
 --
 ALTER TABLE `aluno_turma`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `curso`
@@ -347,7 +350,7 @@ ALTER TABLE `professor`
 -- AUTO_INCREMENT de tabela `turma`
 --
 ALTER TABLE `turma`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restrições para despejos de tabelas
